@@ -1,13 +1,13 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Study3D.MiniGolf
 {
     public class GolfAimIndicator : MonoBehaviour
     {
         [Header("Settings")] 
-        public float minLength;
-        public float maxLength;
+        [FormerlySerializedAs("maxLength")]
+        public float length = 2.5f;
 
         private LineRenderer line;
 
@@ -19,12 +19,8 @@ namespace Study3D.MiniGolf
             Hide();
         }
 
-        public void Show(Vector3 origin, Vector3 direction, float power01)
+        public void Show(Vector3 origin, Vector3 direction)
         {
-            // 0~1 사이의 비율로 들어온 power 값을
-            // 내가 가진 최소 길이(minLength : 0)와 최대 길이(maxLength :0)으로
-            // 치환합니다(바꿔줍니다)
-            float length = Mathf.Lerp(minLength, maxLength, power01);
             line.SetPosition(0, origin);
             line.SetPosition(1, origin + direction * length);
             line.enabled = true;
