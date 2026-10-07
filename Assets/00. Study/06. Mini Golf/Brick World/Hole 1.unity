@@ -32108,7 +32108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Study3D.MiniGolf.BrickHoleGoal
   player: {fileID: 1547090068}
   hud: {fileID: 1638665321}
-  nextSceneName: Hole 2 - Brick Crossroads
+  nextSceneName: Hole 2
 --- !u!65 &904656708
 BoxCollider:
   m_ObjectHideFlags: 0
